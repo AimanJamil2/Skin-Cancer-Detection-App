@@ -9,7 +9,7 @@ function App() {
       Helo
         {/* // <Switch>
         //   <Route exact path="/" component={WelcomePage} />
-        //   <Route path="/main" component={MainPage} />
+        //   <Route path="/main" component={Main} />
         // </Switch> */}
     </div>
     //</Router>
