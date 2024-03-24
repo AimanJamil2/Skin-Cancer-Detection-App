@@ -1,13 +1,19 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 
+// function clickMe() {
+//   window.location.href = '/Main';
+// }
+
 export const Home = () => {
   return (
-    <div className="home">
-    <h1>Welcome</h1>
-    <p>to Skin Cancer Detection</p>
-    <Link to="/main" className="btn btn-primary">Let's Get Started</Link>
-    </div>
+    <div className="container">
+      <div className="home">
+        <h1>Skin Cancer Detection</h1>
+        <p>Use our platform to detect skin cancer early.</p>
+        <Link to="/Main"><button>Let's Get Started</button></Link>
+      </div>
+    </div>   
   )
 }
 

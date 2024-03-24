@@ -1,38 +1,115 @@
-/* .App {
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 641px; 
+  width: 1366px;
+  background-image: url('img.jfif'); 
+  
+}
+
+.home {
+  margin-top: 50px;
+  height: 400px; 
+  width: 900px;
+  text-align: center;
+  background-color: #fff; 
+  padding: 20px;
+  box-shadow: 0px 11px 10px rgba(0, 0, 0, 0.4); 
+}
+
+h1 {
+  margin-top: 100px;
+  font-size: 40px;
+  color: #333333; /* Dark gray text */
+}
+
+p {
+  margin-top: 20px;
+  color: #666666; /* Medium gray text */
+}
+
+button {
+  margin-top: 24px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #000000; 
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+}
+
+button:hover {
+  background-color: #222425; 
+}
+
+
+/*Main.css*/
+/* Styles for the main container */
+.bg_cont {
+  background-color: #ffffff; 
+  min-height: 100vh;
+}
+
+.navbar {
+  background-color: #050d27; 
+  color: #fff; 
+  padding: 20px;
+  height: 60px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.navbar h1{
+  margin-top: 10px;
+  font-size: 35px;
+  color: #fff;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Styles for the main content container */
+.main-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin-top: 0px; 
+  background-color: rgb(255, 255, 255);
+  height: 500px;
+  width: 1000px;
+  margin-left: 183px;
 }
 
-.App-link {
-  color: #61dafb;
+/* Styles for the file input */
+input[type="file"] {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 10px; 
+  
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */
+/* Styles for the uploaded image */
+img {
+  max-width: 20%; /* Ensure the image fits within its container */
+  margin-bottom: 5px; /* Adjusting margin to add space below the image */
+}
+
+/* Styles for the image placeholder */
+.image-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  height: 200px; 
+  background-color: #ffffff; 
+  color: #333333; 
+  border: 2px dashed #cccccc; 
+  border-radius: 8px;
+  margin-bottom: 4px; 
+  box-sizing: border-box; 
+}
