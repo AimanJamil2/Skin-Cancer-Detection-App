@@ -1,5 +1,6 @@
+// main.js
+
 import React, { useState } from 'react';
-import axios from 'axios';
 
 const Main = () => {
   const [selectedFile, setSelectedFile] = useState(null);
@@ -12,15 +13,19 @@ const Main = () => {
   const handleUpload = async () => {
     try {
       const formData = new FormData();
-      formData.append('image', selectedFile);
+      formData.append('imageData', selectedFile);
 
-      const response = await axios.post('/api/predict', formData, {
-        headers: {
-          'Content-Type': 'multipart/form-data',
-        },
+      const response = await fetch('/api/predict', {
+        method: 'POST',
+        body: formData
       });
 
-      setPrediction(response.data.prediction);
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+
+      const responseData = await response.json();
+      setPrediction(responseData.prediction);
     } catch (error) {
       console.error('Error uploading image:', error);
     }
@@ -38,7 +43,6 @@ const Main = () => {
         ) : (
           <div className="image-placeholder">Your image here</div>
         )}
-        {/* {selectedFile && <img src={URL.createObjectURL(selectedFile)} alt="Uploaded" />} */}
         <button onClick={handleUpload}>Detect</button>
         {prediction && <p>{prediction}</p>}
       </div>
