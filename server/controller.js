@@ -1,10 +1,10 @@
 const tf = require('@tensorflow/tfjs-node');
 
 // Load the pre-trained model
-const loadModel = async () => {
+/*const loadModel = async () => {
   const model = await tf.loadLayersModel('skincancerdetection/server/trained_model.h5');
   return model;
-};
+};*/
 
 let modelPromise = loadModel();
 
