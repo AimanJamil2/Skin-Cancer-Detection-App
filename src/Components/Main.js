@@ -1,6 +1,5 @@
-// main.js
-
 import React, { useState } from 'react';
+import axios from 'axios';
 
 const Main = () => {
   const [selectedFile, setSelectedFile] = useState(null);
@@ -13,19 +12,15 @@ const Main = () => {
   const handleUpload = async () => {
     try {
       const formData = new FormData();
-      formData.append('imageData', selectedFile);
+      formData.append('image', selectedFile);
 
-      const response = await fetch('/api/predict', {
-        method: 'POST',
-        body: formData
+      const response = await axios.post('/api/predict', formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+        },
       });
 
-      if (!response.ok) {
-        throw new Error('Network response was not ok');
-      }
-
-      const responseData = await response.json();
-      setPrediction(responseData.prediction);
+      setPrediction(response.data.prediction);
     } catch (error) {
       console.error('Error uploading image:', error);
     }
