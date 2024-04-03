@@ -1,4 +1,4 @@
-/*const tf = require('@tensorflow/tfjs-node');
+const tf = require('@tensorflow/tfjs-node');
 
 // Load the pre-trained model
 const loadModel = async () => {
@@ -27,4 +27,4 @@ const predictSkinCancer = async (req, res) => {
   }
 };
 
-module.exports = { predictSkinCancer };*/
+module.exports = { predictSkinCancer };
